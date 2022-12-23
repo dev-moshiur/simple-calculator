@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is my first program" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Calculator</title>
+    <style>
+        .container{
+            color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction:column;
+        }
+        .calculator{
+            width: 320px;
+            height: 545px;
+            border: 2px solid crimson;
+            border-radius: 8px;
+            margin-top: 13px;
+            background-color:#F0F5F5;
+        }
+        .inputSection{
+            width: 100%;
+            height: 24%;
+            background-color:white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-radius:10px;
+            
+            
+        }
+        .outputRow{
+            height:22%;
+            background-color: white;
+            margin-top: 2.2%;
+            text-align: right;
+            margin-right: 20px;
+            margin-left: 40px;
+            font-size: 20px;
+        }
+        #thirdRow{
+            border-bottom: 1px solid #000;
+        }
+        i{
+            font-size: 9px;
+        }
+        a{
+            font-size: 16px;
+            font-weight:600;
+            text-decoration: none;
+            border: 1px solid blueviolet;
+            color:gray;
+            padding:12px;
+            background-color:#106007;
+            border-radius: 9px;
+            padding: 3px;
+            text-align:center;
+        }
+        .keySection{
+            display: flex;
+            margin: 20px;
+            height: 55%;
+            
+            
+        }
+        .mainKeySection{
+            flex: 3;
+            display:flex;
+            flex-direction:column;
+        }
+        .operatorSection{
+            flex: 1;
+            background-color:#106007;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 100%;
+            border-radius:0px 10px 10px 10px;
+            
+        }
+        .big{
+            height: 55px;
+            width: 43px;
+            border-radius: 14px;
+            font-size: 27px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+        .delKeySection{
+            display: flex;
+            background-color:#176710;
+            height: 24%;
+            width: 100%;
+            flex:1;
+            justify-content: space-around;
+            align-items: center;
+            border-radius:10px 0px 0px 10px;
+            
+        }
+        .large{
+            width: 65px;
+            height: 33px;
+            border-radius: 14px;
+            font-size: 27px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+        }
+        .numberKeySection{
+            height: 76%;
+            display: flex;
+            flex:5;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        .numbersRow{
+            height: 25%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .medium{
+            height:55px;
+            width: 55px;
+            border-radius:50%;
+            box-shadow:-0.7px 0.9px 2.99px gray;
+            font-size: 24px;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            color:gray;
+            font-weight:800;
+
+        }
+        .medium:hover{
+
+            font-size: 37px;
+            background-color:gray;
+            color:white ;
+        }
+        .big:hover{
+
+        font-size: 47px;
+        background-color: rgba(58, 45, 45,0.7);
+        color: grey;
+        
+        }
+        .large:hover{
+
+       
+        background-color: rgba(58, 45, 45,0.7);
+        color: grey;
+
+        }
+       .result{
+        background-color:#106007;
+        
+       }
+       marquee{
+       font-size:14px;
+       }
+
+        
+
+
+
+        
+        
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="inputSection">
+                <span class="outputRow" id="firstRow">
+                    Moshiur Rahman Masud
+
+                </span  >
+                <span class="outputRow" id="secondRow">
+                    <marquee>A Computer Programmer.Honours first
+                    year,Mathematics Department, Dinajpur govt. College 
+                   , Dinajpur </marquee>
+
+                </span>
+                <span class="outputRow" id="thirdRow">
+                    
+
+                </span>
+                <span class="outputRow" id="resultRow"></span>
+                    
+
+                
+
+            </div>
+            <div class="keySection">
+                <div class="mainKeySection">
+                    <div class="delKeySection">
+                        <button onclick="dismiss();" class="large">c</button>
+                        
+                        
+                         
+                        
+                        
+                         
+                        <button
+                        onclick="thirdRow.innerHTML=thirdRow.innerHTML.slice(0,-1)"
+                       
+                        class="large">&#9747;</button>
+
+                    </div>
+                    <div class="numberKeySection">
+                        <div class="numbersRow">
+                            <button 
+                            onclick="thirdRow.innerHTML+= this.innerHTML" 
+                           
+                            
+                            class="medium">9</button>
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                            
+                            
+                            class="medium">8</button>
+                            <button 
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">7</button>
+                        </div>
+                        <div class="numbersRow">
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">6</button>
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">5</button>
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">4</button>
+
+                        </div>
+                        <div class="numbersRow">
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">3</button>
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">2</button>
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">1</button>
+
+                        </div>
+                        <div class="numbersRow">
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">0</button>
+                            <button
+                            onclick="thirdRow.innerHTML+=
+                            this.innerHTML" 
+                             class="medium">.</button>
+                            <button onclick="count()" class="medium result">=</button>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+                <div class="operatorSection">
+                    <button 
+                    onclick="
+                    if(resultRow.innerHTML!=''){
+                    firstRow.innerHTML=resultRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';resultRow.innerHTML=''}
+                    else{
+                    firstRow.innerHTML=thirdRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';}
+                    "
+                    class="big">+</button>
+                    <button
+                    onclick="
+                    if(resultRow.innerHTML!=''){
+                    firstRow.innerHTML=resultRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';resultRow.innerHTML=''}
+                    else{
+                    firstRow.innerHTML=thirdRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';}
+                    "
+                    class="big">-</button>
+                    <button
+                    onclick="
+                    if(resultRow.innerHTML!=''){
+                    firstRow.innerHTML=resultRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';resultRow.innerHTML=''}
+                    else{
+                    firstRow.innerHTML=thirdRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';}
+                    "
+                    class="big">*</button>
+                    <button
+                    onclick="
+                    if(resultRow.innerHTML!=''){
+                    firstRow.innerHTML=resultRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';resultRow.innerHTML=''}
+                    else{
+                    firstRow.innerHTML=thirdRow.innerHTML;
+                    secondRow.innerHTML=this.innerHTML;
+                    thirdRow.innerHTML ='';}
+                    "
+                    class="big">/</button>
+
+
+                </div>
+            </div>
+            
+        </div>
+        
+        
+    </div>
+    <script>
+        var firstRow=document.getElementById('firstRow');
+        var secondRow=document.getElementById('secondRow');
+        var thirdRow=document.getElementById('thirdRow');
+        var resultRow=document.getElementById('resultRow');
+        const count=()=>{
+
+var calculation=0;
+switch(secondRow.innerHTML){
+        case "+":
+        calculation =(firstRow.innerHTML/1)+(thirdRow.innerHTML/1);
+        calculation=(calculation)?  calculation:"	&#128512;";
+
+        break;
+        case "-":
+        calculation =firstRow.innerHTML /1 - thirdRow.innerHTML/1;
+        calculation=(calculation)?  calculation:"	&#128512;";
+
+        break;
+        case "*":
+        calculation =firstRow.innerHTML * thirdRow.innerHTML;
+        calculation=(calculation)?  calculation:"	&#128512;";
+
+        break;
+        case "/":
+        calculation =firstRow.innerHTML /thirdRow.innerHTML;
+        calculation=(calculation)?  calculation:"&#128512;";
+        break;
+        default:calculation="<span>&#128580;</span>";
+        }
+
+        resultRow.innerHTML=calculation;
+}
+        const dismiss=()=>{
+
+            firstRow.innerHTML="Moshiur Rahman Masud";
+            secondRow.innerHTML=`<marquee>A Computer Programmer.Honours first
+            year,Mathematics Department, Dinajpur govt. College 
+            , Dinajpur </marquee>`;
+            thirdRow.innerHTML='';
+            resultRow.innerHTML='';
+        }
+        
+    </script>
+    
+</body>
+</html>
